@@ -5,7 +5,9 @@ const _nameConst = 'Wolverien';
 if (true) {
     _name = 'Hulk';
     _nameLet = 'Iron Man';
-    //_nameConst = 'Thor'; //its no possible regarding is a constant
+    const _nameConst = 'Thor'; //its no possible regarding is a constant - constants can have more than one declaration in two scope
+    console.log(_nameConst);
+
 }
 
 console.log(_name);
