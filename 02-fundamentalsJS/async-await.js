@@ -41,11 +41,16 @@ const getSalary = (id) => {
 }
 
 const id = 2;
-let _name;
-getEmployee(id)
-    .then(employee => {
-        _name = employee;
-        return getSalary(id);
-    })
-    .then(salary => console.log('The employee', _name, 'have a salary of:', salary))
-    .catch(err => console.log(err));
+
+const getInfoUser = async (id) => {
+    
+    const employee = await getEmployee(id);
+    const salary = await getSalary(id);
+
+    return `The employee ${employee} have a salary: ${salary}`;
+}
+
+
+getInfoUser(id)
+.then(msg => console.log(msg))
+.catch(err => console.log(err))
