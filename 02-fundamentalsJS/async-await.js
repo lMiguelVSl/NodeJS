@@ -25,19 +25,28 @@ const salary = [
 ];
 
 const getEmployee = (id) => {
-    const promise = new Promise((resolve, reject) => {
-        const Employee = employees.find(x => x.id === id)
-        return Employee ? resolve(Employee) : reject(`The employee with id: ${id} does not exists`);
+    return new Promise((resolve, reject) => {
+
+        const Employee = employees.find(x => x.id === id).nombre;
+        (Employee) 
+        ? resolve(Employee) 
+        : reject(`The employee with id: ${id} does not exists`);
+        
     })
-    return promise;
 }
 
 const getSalary = (id) => {
-    const promise = new Promise((resolve, reject) => {
-        const Salary = salary.find(x => x.id === id)
-        return Salary ? resolve(Salary) : reject(`The salary with id: ${id} does not exists`);
+
+
+    return new Promise((resolve, reject) => {
+
+        const Salary = salary.find(x => x.id === id).salary;
+        (Salary) 
+        ? resolve(Salary) 
+        : reject(`The salary with id: ${id} does not exists`);
+
     })
-    return promise;
+
 }
 
 const id = 2;
