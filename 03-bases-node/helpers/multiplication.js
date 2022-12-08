@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const createFile = (base) => {
+const createFile = (base, list = false) => {
     return new Promise((resolve, reject) => {
 
         let salida = '';
@@ -16,6 +16,13 @@ const createFile = (base) => {
         } catch (error) {
             reject(error);
         }
+
+        if (list) {
+            console.log('=======================');
+            console.log(`Number's ${base} table:`);
+            console.log('=======================');
+            console.log(salida);
+        }        
     });
 }
 

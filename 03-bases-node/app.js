@@ -6,12 +6,18 @@ const argv = require('yargs')
         demandOption: true
     })
     .check((argv, options) => {
-        if (isNaN(argv)) throw 'The base have to be number type';
+        if (isNaN(argv.b)) throw 'The base have to be number type';
         return true;
+    })
+    .options('l', {
+        alias: 'list',
+        type: 'boolean',
+        demandOption: false,
+        default: false
     }).argv;
 
 console.clear();
 
 console.log('argv: ', argv);
 
-//createFile(base).then(fileName => console.log(fileName)).catch(err => console.log(err));
+createFile(argv.base, argv.list).then(fileName => console.log(fileName)).catch(err => console.log(err));
