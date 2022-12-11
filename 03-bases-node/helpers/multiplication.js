@@ -1,12 +1,12 @@
 const fs = require('fs');
 
-const createFile = (base, list = false) => {
+const createFile = (base, limit, list = false) => {
     return new Promise((resolve, reject) => {
 
         let salida = '';
 
-        for (let i = 1; i <= 10; i++) {
-            i == 10 ? salida += `${base} x ${i} = ${base * i}` : salida += `${base} x ${i} = ${base * i}\n`;
+        for (let i = 1; i <= limit; i++) {
+            i == limit ? salida += `${base} x ${i} = ${base * i}` : salida += `${base} x ${i} = ${base * i}\n`;
         }
 
         try {

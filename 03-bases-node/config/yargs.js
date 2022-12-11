@@ -11,6 +11,12 @@ const argv = require('yargs')
         default: false,
         describe: 'Show or not the result in console'
     })
+    .options('h', {
+        alias: 'limit',
+        type: 'number',
+        default: 10,
+        describe: 'Limit to have the number multiplayed by'
+    })
     .check((argv, options) => {
         if (isNaN(argv.b)) throw 'The base have to be number type';
         return true;
