@@ -10,7 +10,7 @@ const createFile = (base, limit, list = false) => {
         }
 
         try {
-            const fileName = `tabla-${base}.txt`;
+            const fileName = `./salida/tabla-${base}.txt`;
             fs.writeFileSync(fileName, salida);
             resolve(fileName);
         } catch (error) {
