@@ -1,4 +1,4 @@
-import uuid from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 class Task {
     Id = '';
@@ -6,8 +6,8 @@ class Task {
     CompletedOn = null;
 
     constructor(desc) {
-        this.Id = uuid.v4();
-        this.desc = desc;
+        this.Id = uuidv4();
+        this.Desc = desc;
         this.CompletedOn = null;
     }
 }
