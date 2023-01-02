@@ -14,7 +14,7 @@ console.clear();
 
         switch (opt) {
             case '1':
-                const description = await readInput('Desciption test: ');
+                const description = await readInput('Task Desciption: ');
                 tasks.createTask(description);
                 break;
             case '2':
