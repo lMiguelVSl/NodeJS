@@ -1,6 +1,6 @@
 import readLine from 'readline';
 
-const pause = () => {
+const pause = async() => {
 
     return new Promise( resolve => {
         const readline = readLine.createInterface({

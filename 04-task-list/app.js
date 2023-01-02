@@ -1,5 +1,5 @@
-import { inquirerMenu } from './helpers/inquirer.js';
-import { pause } from './helpers/messages.js';
+import { inquirerMenu, pause } from './helpers/inquirer.js';
+
 console.clear();
 
 (async () => {
