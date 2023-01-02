@@ -12,7 +12,7 @@ const main = async () => {
     while (opt !== '0') {
         opt = await showMenu();
         console.log('opt', { opt });
-        await pause();
+        if (opt !== '0') await pause();
 
     }
 }
