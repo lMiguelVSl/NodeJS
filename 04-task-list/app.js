@@ -26,7 +26,7 @@ console.clear();
                     break;  
         }
 
-        saveDB( tasks.getListArr );
+        //saveDB( tasks.getListArr() );
 
         if (opt !== '0') await pause();
     }

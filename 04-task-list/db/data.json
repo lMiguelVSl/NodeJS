@@ -1,0 +1,17 @@
+[
+    {
+        "Id": "211cc853-c4dd-4d82-a8ed-05078ef416dc",
+        "Desc": "Create an NodeJS application",
+        "CompletedOn": null
+    },
+    {
+        "Id": "732bae93-5d70-4b24-b992-4184c324d404",
+        "Desc": "Study NodeJS",
+        "CompletedOn": null
+    },
+    {
+        "Id": "780b0ca9-531e-477d-8f30-0bdb939bee9c",
+        "Desc": "Study Angular ",
+        "CompletedOn": null
+    }
+]
