@@ -1,4 +1,5 @@
 import { inquirerMenu, pause, readInput } from './helpers/inquirer.js';
+import { saveDB } from './helpers/saveFile.js';
 import { Tasks } from './models/tasks.js';
 
 console.clear();
@@ -20,7 +21,12 @@ console.clear();
             case '2':
                 console.log(tasks._list)
                 break;
+                case '3':
+                    console.log(tasks.getListArr());
+                    break;  
         }
+
+        saveDB( tasks.getListArr );
 
         if (opt !== '0') await pause();
     }
