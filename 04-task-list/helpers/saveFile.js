@@ -1,8 +1,22 @@
 import fs from 'fs';
 
+const filePath = './db/data.json';
+
 const saveDB = (data) => {
-    const filePath = './db/data.json';
     fs.writeFileSync(filePath, JSON.stringify(data));
 }
 
-export { saveDB };
+const readDB = () => {
+    if (!fs.existsSync(filePath)) {
+        return null;
+    }
+
+    const info = fs.readFileSync(filePath, { encoding: 'utf8' });
+    const data = JSON.parse(info);
+    return data;
+}
+
+export {
+    saveDB,
+    readDB
+};
