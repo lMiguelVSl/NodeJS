@@ -13,6 +13,10 @@ class Tasks {
         this._list = {}
     }
 
+    uploadTasks(tasks = []) {
+        tasks.forEach(task => this._list[task.Id] = task);
+    }
+
     createTask(desc = '') {
         const task = new Task(desc);
         this._list[task.Id] = task;
