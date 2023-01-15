@@ -27,7 +27,10 @@ console.clear();
                 tasks.tasksCompleteList();
                 break;
             case '3':
-                console.log(tasks.getListArr());
+                tasks.completeOrPendingTasks();
+                break;
+            case '4':
+                tasks.completeOrPendingTasks(false);
                 break;
         }
 

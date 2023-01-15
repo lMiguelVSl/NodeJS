@@ -31,6 +31,25 @@ class Tasks {
         })
     }
 
+    completeOrPendingTasks(isCompleted = true) {
+        let state, cont = 0;
+        this.getListArr().forEach((task, i) => {
+            const { Desc, CompletedOn } = task;
+            if (isCompleted) {
+                if (CompletedOn) {
+                    cont += 1;
+                    state = 'Completed'.green;
+                    console.log(cont.toString().green, Desc, '::', state);
+                }
+            } else {
+                if (!CompletedOn) {
+                    cont += 1;
+                    state = 'Pending'.red;
+                    console.log(cont.toString().green, Desc, '::', state);
+                }
+            }
+        })
+    }
 
 }
 
