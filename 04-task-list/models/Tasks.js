@@ -21,6 +21,17 @@ class Tasks {
         const task = new Task(desc);
         this._list[task.Id] = task;
     }
+
+    tasksCompleteList() {
+        this.getListArr().forEach((task, i) => {
+            const idx = `${i + 1}`.green;
+            const { Desc, CompletedOn } = task;
+            const state = (CompletedOn) ? 'Completed'.green : 'Pending'.red;
+            console.log(idx, Desc, '::', state);
+        })
+    }
+
+
 }
 
 export { Tasks };

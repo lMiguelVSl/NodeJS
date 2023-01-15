@@ -24,7 +24,7 @@ console.clear();
                 tasks.createTask(description);
                 break;
             case '2':
-                console.log(tasks._list)
+                tasks.tasksCompleteList();
                 break;
             case '3':
                 console.log(tasks.getListArr());
