@@ -17,7 +17,7 @@ const questions = [
             },
             {
                 value: 0,
-                name: `${'3.'.green} Exit`
+                name: `${'0.'.green} Exit`
             }
         ]
     }
