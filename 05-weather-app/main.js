@@ -17,15 +17,15 @@ import "dotenv/config.js";
                 //selected place
                 const { name, lat, lng } = places.find(m => m.id === id);
                 //weather
-
+                let { temp, temp_min, temp_max } = await searchs.searchWeather(lat, lng);
                 //show results
                 console.log('\n City Information: \n'.green);
                 console.log('City:', name);
                 console.log('Lat:', lat);
                 console.log('Lng:', lng);
-                console.log('Temp:',);
-                console.log('Temp Min:',);
-                console.log('Temp Max',);
+                console.log('Temp:', temp);
+                console.log('Temp Min:', temp_min);
+                console.log('Temp Max', temp_max);
                 break;
             case 2:
                 break;

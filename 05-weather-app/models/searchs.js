@@ -30,4 +30,26 @@ export class Searchs {
         }));
 
     }
+
+    async searchWeather(lat, lon) {
+        try {
+            const instance = axios.create({
+                baseURL: `https://api.openweathermap.org/data/2.5/weather`,
+                params: {
+                    'lat': lat,
+                    'lon': lon,
+                    'appid': process.env.OPENWEATHER_KEY
+                }
+            });
+
+            const res = await instance.get();
+            return {
+                temp: res.data.main.temp,
+                temp_min: res.data.main.temp_min,
+                temp_max: res.data.main.temp_max
+            };
+        } catch (error) {
+            console.log('GET WEATHER ERROR');
+        }
+    }
 }
