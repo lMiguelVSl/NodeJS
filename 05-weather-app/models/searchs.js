@@ -11,7 +11,7 @@ export class Searchs {
         const instance = axios.create({
             baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${place}.json`,
             params: {
-                'access_token': 'pk.eyJ1IjoibWlndWVsdnNsIiwiYSI6ImNsZGY4dmRqcDBnZmIzcW1wenNweHo3bGsifQ.Byy9BY57lcBcmdQ48kUN_w',
+                'access_token': process.env.MAPBOX_KEY,
                 'limit': 5,
                 'languaje': 'es'
             }
