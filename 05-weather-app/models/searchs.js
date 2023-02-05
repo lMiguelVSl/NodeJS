@@ -43,10 +43,11 @@ export class Searchs {
             });
 
             const res = await instance.get();
+            const { temp, temp_min, temp_max } = res.data.main
             return {
-                temp: res.data.main.temp,
-                temp_min: res.data.main.temp_min,
-                temp_max: res.data.main.temp_max
+                temp,
+                temp_min,
+                temp_max
             };
         } catch (error) {
             console.log('GET WEATHER ERROR');
