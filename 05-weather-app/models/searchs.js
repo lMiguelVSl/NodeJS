@@ -6,23 +6,28 @@ export class Searchs {
         //TODO: read DB if exists
     }
 
+    get paramsMapBox() {
+        return {
+            'access_token': process.env.MAPBOX_KEY,
+            'limit': 5,
+            'languaje': 'es'
+        }
+    }
+
     async searchCity(place = '') {
 
         const instance = axios.create({
             baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${place}.json`,
-            params: {
-                'access_token': process.env.MAPBOX_KEY,
-                'limit': 5,
-                'languaje': 'es'
-            }
+            params: this.paramsMapBox
         });
 
-        await instance.get()
-            .then(res => {
-                console.log('DATA', res.data);
-                return;
-            })
-            .catch(err => console.log('error axios get'));
+        const res = await instance.get();
+        return res.data.features.map(p => ({
+            id: p.id,
+            name: p.place_name,
+            lng: p.center[0],
+            lat: p.center[1]
+        }));
 
     }
 }
