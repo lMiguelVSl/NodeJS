@@ -16,6 +16,14 @@ export class Searchs {
         }
     }
 
+    get historyCap() {
+        return this.history.map(item => {
+            let words = item.split(' ');
+            words = words.map(p => p[0].toUpperCase() + p.substring(1))
+            return words.join(' ');
+        });
+    }
+
     async searchCity(place = '') {
 
         const instance = axios.create({

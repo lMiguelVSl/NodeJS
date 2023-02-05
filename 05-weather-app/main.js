@@ -32,7 +32,7 @@ import "dotenv/config.js";
                 break;
             case 2:
                 searchs.readDb();
-                searchs.history.forEach((city, i) => {
+                searchs.historyCap.forEach((city, i) => {
                     const idx = i + 1;
                     console.log(`${idx}`.green, city);
                 })
