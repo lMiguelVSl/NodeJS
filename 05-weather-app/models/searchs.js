@@ -1,7 +1,9 @@
 import axios from 'axios';
+import fs from 'fs';
 
 export class Searchs {
-    history = ['', '', ''];
+    history = [];
+    dbPath = './Db/db.json';
     constructor() {
         //TODO: read DB if exists
     }
@@ -52,5 +54,24 @@ export class Searchs {
         } catch (error) {
             console.log('GET WEATHER ERROR');
         }
+    }
+
+    saveHistory(place = '') {
+        if (this.history.includes(place.toLocaleLowerCase())) return;
+        this.history.unshift(place.toLocaleLowerCase());
+        if (this.history.length > 5) this.history.pop();
+        this.saveDB();
+    }
+
+    saveDB() {
+        const payload = {
+            history: this.history
+        }
+        fs.writeFileSync(this.dbPath, JSON.stringify(payload));
+    }
+
+    readDb() {
+        const dbData = JSON.parse(fs.readFileSync(this.dbPath, { encoding: 'utf-8' }));
+        this.history = dbData.history;
     }
 }
