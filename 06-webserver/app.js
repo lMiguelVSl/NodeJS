@@ -1,9 +1,17 @@
-const http = require('http');
+const express = require('express');
 
-http.createServer((req, res) => {
-    res.write('Hello');
-    res.end();
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+    res.send('NodeJs Application using express!!');
 })
-    .listen(3000);
 
-console.log('listen localhost:3000');
+app.get('/hello-world', (req, res) => {
+    res.send('Hello from Express');
+})
+
+app.get('*', (req, res) => {
+    res.send('404 Not Found');
+})
+app.listen(port, () => console.log(`listen localhost:${port}`));
