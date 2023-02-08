@@ -3,9 +3,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('NodeJs Application using express!!');
-})
+app.use(express.static('public'));
 
 app.get('/hello-world', (req, res) => {
     res.send('Hello from Express');
