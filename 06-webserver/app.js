@@ -23,7 +23,17 @@ app.get('/index', (req, res) => {
 })
 
 app.get('/generic', (req, res) => {
-    res.sendFile(__dirname + '/public/generic.html');
+    res.render('generic', {
+        name: 'Miguel Angel Vargas',
+        title: 'Node Course'
+    });
+})
+
+app.get('/elements', (req, res) => {
+    res.render('elements', {
+        name: 'Miguel Angel Vargas',
+        title: 'Node Course'
+    });
 })
 
 app.get('*', (req, res) => {
